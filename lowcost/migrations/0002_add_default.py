@@ -3,7 +3,6 @@
 from __future__ import unicode_literals
 from django.db import migrations
 import logging
-from lowcost.constants import COUNTRIES
 
 logger = logging.getLogger(__name__)
 
@@ -35,6 +34,43 @@ def add_currency(apps, schema_editor):
             cc, created = Currency.objects.get_or_create(code=currency[0], to_usd=currency[1])
         except Exception, e:
             print e
+
+
+KOSOVO = "KOSOVO"
+MONTENEGRO = "MONTENEGRO"
+SERBIA = "SERBIA"
+IZRAEL = "ІЗРАЇЛЬ"
+ISLANDIYA = "ІСЛАНДІЯ"
+SPAIN = "ІСПАНІЯ"
+ITALY = "ІТАЛІЯ"
+AZERBAYDZHAN = "АЗЕРБАЙДЖАН"
+ALBANIYA = "АЛБАНІЯ"
+BELGIYA = "БЕЛЬГІЯ"
+BOLGARIYA = "БОЛГАРІЯ"
+BOSNIYA = "БОСНІЯ І ГЕРЦЕГОВИНА"
+GREESE = "ГРЕЦІЯ"
+GEORGIA = "ГРУЗІЯ"
+DANIYA = "ДАНІЯ"
+KIPR = "КІПР"
+LATVIYA = "ЛАТВІЯ"
+LYTVA = "ЛИТВА"
+MAKEDONIYA = "МАКЕДОНІЯ"
+MALTA = "МАЛЬТА"
+MOLDAVA = "МОЛДОВА"
+NORVEGIYA = "НОРВЕГІЯ"
+NIDERLANDY = "НІДЕРЛАНДИ"
+GERMANY = "НІМЕЧЧИНА"
+GB = "ОБ'ЄДНАНЕ КОРОЛІВСТВО"
+EMIRATY = "ОБ'ЄДНАНІ АРАБСЬКІ ЕМІРАТИ"
+POLAND = "ПОЛЬЩА"
+PORTUGALIYA = "ПОРТУГАЛІЯ"
+HUNGURY = "УГОРЩИНА"
+
+COUNTRIES = ["УКРАЇНА", "РУМУНІЯ", HUNGURY, POLAND, KOSOVO, MONTENEGRO, BOLGARIYA, SERBIA, IZRAEL, ISLANDIYA, SPAIN,
+             ITALY, AZERBAYDZHAN, ALBANIYA, BELGIYA,
+             BOSNIYA, GREESE, GEORGIA, DANIYA, KIPR, LATVIYA, LYTVA, MAKEDONIYA, MALTA, MOLDAVA, NORVEGIYA, NIDERLANDY,
+             GERMANY, GB, EMIRATY, PORTUGALIYA, "РОСІЯ", "СЛОВАКІЯ", "СЛОВЕНІЯ", "ФРАНЦІЯ", "ФІНЛЯНДІЯ",
+             "ХОРВАТІЯ", "ЧЕСЬКА РЕСПУБЛІКА", "ШВЕЙЦАРІЯ"]
 
 
 def add_country(apps, schema_editor):
