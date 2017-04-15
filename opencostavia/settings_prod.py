@@ -1,5 +1,5 @@
 import os
-ALLOWED_HOSTS = [u'0.0.0.0', u'*']
+# ALLOWED_HOSTS = [u'0.0.0.0', u'*']
 
 DATABASES_HOST = os.getenv('DATABASES_HOST', '')
 PASSWORD_DATABASES = os.getenv('PASSWORD_DATABASES', '')
@@ -15,4 +15,4 @@ DATABASES = {
         }
     }
 
-DEBUG = False
+# DEBUG = False
