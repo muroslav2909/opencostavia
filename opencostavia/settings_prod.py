@@ -1,7 +1,7 @@
 import os
 
 DEBUG = False
-ALLOWED_HOSTS = ['52.29.209.45', '*', '127.0.0.1']
+ALLOWED_HOSTS = ['*']
 
 DATABASES_HOST = os.getenv('DATABASES_HOST', '')
 PASSWORD_DATABASES = os.getenv('PASSWORD_DATABASES', '')
