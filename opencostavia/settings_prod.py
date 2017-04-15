@@ -1,5 +1,5 @@
 import os
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['0.0.0.0:8000', '*']
 
 DATABASES_HOST = os.getenv('DATABASES_HOST', '')
 PASSWORD_DATABASES = os.getenv('PASSWORD_DATABASES', '')
