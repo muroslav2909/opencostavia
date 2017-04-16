@@ -6,5 +6,4 @@ dump.rdb
 celerybeat-schedule
 supervisord.log
 supervisord.pid
-conf/
 logs/
