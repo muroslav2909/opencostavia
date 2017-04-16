@@ -5,6 +5,9 @@ from selenium.webdriver.support.ui import Select
 from datetime import datetime
 from pyvirtualdisplay import Display
 
+from opencostavia.settings import BASE_DIR
+
+
 def setUp():
     display = Display(visible=0, size=(800, 600))
     display.start() # for server should be uncomented
@@ -29,12 +32,14 @@ def set_arrival(driver, arrival_airport):
     sleep(2)
 
 def button_click(driver):
-    sleep(1)
-    driver.find_element_by_xpath('//*[@id="app"]/div[3]/div/main/div/div/div[2]/div/div/div[1]/div[2]/button').click()
-    sleep(2)
-    select = Select(driver.find_element_by_xpath('//*[@id="app"]/div[3]/div/main/div/div/div[2]/div[2]/div[1]/div[1]/div/select'))
-    select.select_by_visible_text(u'травень 2017')
-    sleep(2)
+    try:
+        driver.find_element_by_xpath('//*[@id="app"]/div[3]/div/main/div/div/div[2]/div/div/div[1]/div[2]/button').click()
+        sleep(2)
+        select = Select(driver.find_element_by_xpath('//*[@id="app"]/div[3]/div/main/div/div/div[2]/div[2]/div[1]/div[1]/div/select'))
+        select.select_by_visible_text(u'травень 2017')
+        sleep(2)
+    except:
+        driver.save_screenshot(BASE_DIR + str(datetime.now()) + '.png')
 
 def show_time(driver):
     if driver.find_element_by_xpath('//*[@id="app"]/div[3]/div/main/div/div/div[2]/div[2]/div[1]/div[2]/div/button').text == u"ПОКАЗАТИ ЧАС ВІДПРАВЛЕННЯ":

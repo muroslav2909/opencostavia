@@ -5,6 +5,7 @@ sudo kill -9 `ps -ef | grep gunicorn | grep -v grep | awk '{print $2}'`
 sudo kill -9 `ps -ef | grep celery | grep -v grep | awk '{print $2}'`
 
 if [ "$RUN_ENV" == PROD ]; then
+    redis-cli FLUSHALL
     sudo kill -9 `ps -ef | grep chrome | grep -v grep | awk '{print $2}'`
     sudo kill -9 `ps -ef | grep Xvfb | grep -v grep | awk '{print $2}'`
     sudo kill -9 `ps -ef | grep nginx | grep -v grep | awk '{print $2}'`

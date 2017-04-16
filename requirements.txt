@@ -15,6 +15,7 @@ kombu==3.0.37
 meld3==1.0.2
 packaging==16.8
 pathtools==0.1.2
+psycopg2==2.7.1
 pyparsing==2.2.0
 pytz==2017.2
 PyVirtualDisplay==0.2.1
