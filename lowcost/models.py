@@ -40,7 +40,7 @@ class Airport(models.Model):
     updated = models.DateTimeField(auto_now=True)
 
     def __unicode__(self):
-        return unicode(self.name)
+        return unicode(self.id)
 
     def add_possible_way_wizzair(self):
         driver = setUp()
