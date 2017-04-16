@@ -56,7 +56,7 @@ class Airport(models.Model):
                 except Exception, e:
                     print e
         clear_departure_airport(driver)
-        driver.quit()
+        driver.dispose()
 
 
     def add_flight(self):
@@ -80,7 +80,7 @@ class Airport(models.Model):
                                                                       defaults={'price': float(info[1]), 'currency': curr, 'price_usd': price_usd})
                         if not create:
                             Flight.objects.filter(from_airport=self, to_airport=possible_way, date=date).update(price=float(info[1]), currency=curr, price_usd=price_usd)
-            driver.quit()
+            driver.dispose()
 
 
 class Flight(models.Model):

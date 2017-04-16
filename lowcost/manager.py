@@ -9,7 +9,7 @@ from opencostavia.settings import BASE_DIR
 
 
 def setUp():
-    display = Display(visible=0, size=(1024, 768))
+    display = Display(visible=0, size=(2044, 1500))
     display.start() # for server should be uncomented
     driver = webdriver.Chrome()
     driver.implicitly_wait(30)
