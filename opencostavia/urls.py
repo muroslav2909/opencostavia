@@ -24,7 +24,3 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
               # + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
-
-SERVER_ENVIRONMENT = os.getenv('RUN_ENV', '')
-if SERVER_ENVIRONMENT == 'PROD':
-    urlpatterns += url('', (r'^static/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.STATIC_ROOT}), )

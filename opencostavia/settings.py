@@ -125,6 +125,21 @@ STATIC_URL = '/'
 STATIC_ROOT = os.path.join('static/')
 
 
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'static', "admin", "css"),
+    os.path.join(BASE_DIR, 'static', "admin", "js"),
+    os.path.join(BASE_DIR, 'static', "admin", "img"),
+    # os.path.join(MEDIA_ROOT),
+    os.path.join(BASE_DIR, 'static', "admin"),
+    # os.path.join(BASE_DIR, 'static', "admin", "js"),
+    # os.path.join(BASE_DIR, 'static', "admin", "img"),
+    # os.path.join(BASE_DIR, 'static', "admin", "css"),
+    # os.path.join(BASE_DIR, 'static', "admin", "js"),
+    # os.path.join(BASE_DIR, 'static', "admin", "img"),
+    # os.path.join(BASE_DIR, "templates"),
+)
+
+
 # CELERY STUFF
 BROKER_URL = 'redis://localhost:6379'
 CELERY_RESULT_BACKEND = 'redis://localhost:6379'
