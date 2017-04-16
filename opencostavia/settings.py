@@ -52,6 +52,7 @@ MIDDLEWARE_CLASSES = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'opencostavia.urls'
@@ -121,23 +122,10 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
+
 STATIC_URL = '/'
 STATIC_ROOT = os.path.join('static/')
-
-
-STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, 'static', "admin", "css"),
-    os.path.join(BASE_DIR, 'static', "admin", "js"),
-    os.path.join(BASE_DIR, 'static', "admin", "img"),
-    # os.path.join(MEDIA_ROOT),
-    os.path.join(BASE_DIR, 'static', "admin"),
-    # os.path.join(BASE_DIR, 'static', "admin", "js"),
-    # os.path.join(BASE_DIR, 'static', "admin", "img"),
-    # os.path.join(BASE_DIR, 'static', "admin", "css"),
-    # os.path.join(BASE_DIR, 'static', "admin", "js"),
-    # os.path.join(BASE_DIR, 'static', "admin", "img"),
-    # os.path.join(BASE_DIR, "templates"),
-)
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 
 # CELERY STUFF

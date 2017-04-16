@@ -1,5 +1,6 @@
 import os
 
+
 DEBUG = False
 ALLOWED_HOSTS = ['*']
 
@@ -16,5 +17,3 @@ DATABASES = {
             'PORT': '5432',
         }
     }
-
-STATIC_ROOT = "/home/ubuntu/opencostavia/static"
