@@ -39,7 +39,7 @@ def button_click(driver):
         select.select_by_visible_text(u'травень 2017')
         sleep(2)
     except:
-        driver.save_screenshot("%s_%s.png" % ('/lowcost/screenshots/', str(datetime.now()).replace(' ','')))
+        driver.save_screenshot("%s/%s_%s.png" % (BASE_DIR, 'lowcost/screenshots/', str(datetime.now()).replace(' ','')))
 
 def show_time(driver):
     if driver.find_element_by_xpath('//*[@id="app"]/div[3]/div/main/div/div/div[2]/div[2]/div[1]/div[2]/div/button').text == u"ПОКАЗАТИ ЧАС ВІДПРАВЛЕННЯ":
