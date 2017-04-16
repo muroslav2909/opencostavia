@@ -29,6 +29,7 @@ def set_arrival(driver, arrival_airport):
     sleep(2)
 
 def button_click(driver):
+    sleep(1)
     driver.find_element_by_xpath('//*[@id="app"]/div[3]/div/main/div/div/div[2]/div/div/div[1]/div[2]/button').click()
     sleep(2)
     select = Select(driver.find_element_by_xpath('//*[@id="app"]/div[3]/div/main/div/div/div[2]/div[2]/div[1]/div[1]/div/select'))
