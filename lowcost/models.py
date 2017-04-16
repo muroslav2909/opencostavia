@@ -4,7 +4,7 @@ from decimal import Decimal
 from django.db import models
 from lowcost.constants import MAIN_URL_WIZZAIR, COUNTRIES, PATH_TO_ITEMS
 from lowcost.manager import setUp, set_departure, scroll, get_airports_list, clear_departure_airport, set_arrival, \
-    button_click, show_time, get_normal_date
+    button_click, show_time, get_normal_date, close_all
 
 
 class Currency(models.Model):
@@ -56,8 +56,7 @@ class Airport(models.Model):
                 except Exception, e:
                     print e
         clear_departure_airport(driver)
-        driver.close()
-        driver.quit()
+        close_all(driver)
 
     def add_flight(self):
         for possible_way in self.possible_way.all():
@@ -80,8 +79,7 @@ class Airport(models.Model):
                                                                       defaults={'price': float(info[1]), 'currency': curr, 'price_usd': price_usd})
                         if not create:
                             Flight.objects.filter(from_airport=self, to_airport=possible_way, date=date).update(price=float(info[1]), currency=curr, price_usd=price_usd)
-            driver.close()
-            driver.quit()
+            close_all(driver)
 
 
 class Flight(models.Model):

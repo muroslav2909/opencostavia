@@ -1,4 +1,6 @@
 # -*- coding: utf-8 -*-
+import os
+
 from selenium import webdriver
 from time import sleep
 from selenium.webdriver.support.ui import Select
@@ -56,3 +58,8 @@ def get_airports_list(driver):
 def get_normal_date(date, time):
     hours, minutes = time.split(":")
     return datetime(int(2017), int(5), int(date), int(hours), int(minutes))
+
+def close_all(driver):
+    driver.close()
+    driver.quit()
+    os.system("kill -9 `ps -ef | grep Xvfb | grep -v grep | awk '{print $2}'`")
