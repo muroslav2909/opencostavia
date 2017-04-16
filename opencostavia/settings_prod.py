@@ -17,3 +17,4 @@ DATABASES = {
         }
     }
 
+STATIC_ROOT = "/home/ubuntu/opencostavia/static"
